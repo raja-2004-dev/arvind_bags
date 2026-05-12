@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
 /* ── CSS-in-JS via a style tag injected once ── */
 const STYLES = `
