@@ -239,23 +239,36 @@ const PRODUCTS = {
 
 function Nav({ activeSection }) {
   const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+
   return (
     <nav className="ab-nav">
-      <a className="ab-logo" onClick={() => scrollTo("home")}>
+      <a
+        href="#home"
+        className="ab-logo"
+        onClick={() => scrollTo("home")}
+      >
         <div className="ab-logo-mark">A</div>
-        <span className="ab-logo-name">Arvind <b>Bags</b></span>
+        <span className="ab-logo-name">
+          Arvind <b>Bags</b>
+        </span>
       </a>
+
       <ul className="ab-nav-links">
-        {[["features","Why Us"],["about","About"],["testimonials","Reviews"]].map(([id, label]) => (
+        {[["features", "Why Us"], ["about", "About"], ["testimonials", "Reviews"]].map(([id, label]) => (
           <li key={id}>
-            <a className={activeSection === id ? "active-link" : ""} onClick={() => scrollTo(id)}>{label}</a>
+            <a
+              href={`#${id}`}
+              className={activeSection === id ? "active-link" : ""}
+              onClick={() => scrollTo(id)}
+            >
+              {label}
+            </a>
           </li>
         ))}
       </ul>
     </nav>
   );
 }
-
 function Hero() {
   const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   return (
@@ -377,20 +390,48 @@ function Catalog() {
 }
 
 function About() {
-  const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   return (
     <section id="about" className="ab-about">
       <div className="ab-about-imgs">
-        <div className="ab-about-img tall"><img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=400&q=80" alt="Bags" /></div>
-        <div className="ab-about-img sq"><img src="https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?w=400&q=80" alt="Bags display" /></div>
+        <div className="ab-about-img tall">
+          <img
+            src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=400&q=80"
+            alt="Bags"
+          />
+        </div>
+
+        <div className="ab-about-img sq">
+          <img
+            src="https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?w=400&q=80"
+            alt="Bags display"
+          />
+        </div>
+
         <div></div>
-        <div className="ab-about-img tall"><img src="https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?w=400&q=80" alt="Luggage" /></div>
+
+        <div className="ab-about-img tall">
+          <img
+            src="https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?w=400&q=80"
+            alt="Luggage"
+          />
+        </div>
       </div>
+
       <div className="ab-about-text">
         <span className="ab-sec-label">Our Story</span>
-        <h2 className="ab-sec-title">Four Decades of Craftsmanship</h2>
-        <p>Founded in 1985 in the heart of Thoothukudi, we began as a small workshop stitching school bags for local students. Today, we are one of South India's most trusted bag manufacturers.</p>
-        <p>Every product that leaves our facility reflects generations of skill, attention to detail, and a commitment to making bags that last for years.</p>
+
+        <h2 className="ab-sec-title">
+          Four Decades of Craftsmanship
+        </h2>
+
+        <p>
+          Founded in 1985 in the heart of Thoothukudi, we began as a small workshop stitching school bags for local students. Today, we are one of South India's most trusted bag manufacturers.
+        </p>
+
+        <p>
+          Every product that leaves our facility reflects generations of skill, attention to detail, and a commitment to making bags that last for years.
+        </p>
+
         <ul className="ab-about-list">
           {[
             "Manufactured in Thoothukudi, Tamil Nadu",
@@ -398,9 +439,18 @@ function About() {
             "Over 50 skilled artisans on our team",
             "Custom branding and bulk orders available",
             "Environmentally responsible materials used",
-          ].map((item) => <li key={item}>{item}</li>)}
+          ].map((item) => (
+            <li key={item}>{item}</li>
+          ))}
         </ul>
-        <a className="ab-btn-gold" onClick={() => scrollTo("contact")} style={{ cursor: "pointer" }}>Partner With Us</a>
+
+        <a
+          href="#contact"
+          className="ab-btn-gold"
+          style={{ cursor: "pointer" }}
+        >
+          Partner With Us
+        </a>
       </div>
     </section>
   );
@@ -508,44 +558,104 @@ function Contact() {
 }
 
 function Footer() {
-  const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  const scrollTo = (id) =>
+    document.getElementById(id)?.scrollIntoView({
+      behavior: "smooth",
+    });
+
   return (
     <footer className="ab-footer">
       <div className="ab-footer-top">
         <div>
-          <div style={{ fontFamily: "'Playfair Display', serif", fontSize: 20, fontWeight: 600, color: "#fff" }}>
+          <div
+            style={{
+              fontFamily: "'Playfair Display', serif",
+              fontSize: 20,
+              fontWeight: 600,
+              color: "#fff",
+            }}
+          >
             Arvind <b style={{ color: "var(--gold-lt)" }}>Bags</b>
           </div>
-          <p className="ab-footer-tagline">Crafting quality bags for every journey since 1985. Proudly made in Thoothukudi, Tamil Nadu.</p>
+
+          <p className="ab-footer-tagline">
+            Crafting quality bags for every journey since 1985.
+            Proudly made in Thoothukudi, Tamil Nadu.
+          </p>
         </div>
+
         <div className="ab-footer-col">
           <h4>Products</h4>
+
           <ul>
-            {["Handbags","Backpacks","Luggage","Wallets","School Bags"].map((p) => (
-              <li key={p}><a onClick={() => scrollTo("catalog")}>{p}</a></li>
+            {[
+              "Handbags",
+              "Backpacks",
+              "Luggage",
+              "Wallets",
+              "School Bags",
+            ].map((p) => (
+              <li key={p}>
+                <a
+                  href="#catalog"
+                  onClick={() => scrollTo("catalog")}
+                >
+                  {p}
+                </a>
+              </li>
             ))}
           </ul>
         </div>
+
         <div className="ab-footer-col">
           <h4>Company</h4>
+
           <ul>
-            {[["about","About Us"],["features","Why Us"],["testimonials","Reviews"],["contact","Contact"]].map(([id, label]) => (
-              <li key={id}><a onClick={() => scrollTo(id)}>{label}</a></li>
+            {[
+              ["about", "About Us"],
+              ["features", "Why Us"],
+              ["testimonials", "Reviews"],
+              ["contact", "Contact"],
+            ].map(([id, label]) => (
+              <li key={id}>
+                <a
+                  href={`#${id}`}
+                  onClick={() => scrollTo(id)}
+                >
+                  {label}
+                </a>
+              </li>
             ))}
           </ul>
         </div>
+
         <div className="ab-footer-col">
           <h4>Policies</h4>
+
           <ul>
-            {["Shipping Policy","Returns","Privacy Policy","Terms of Use"].map((p) => (
-              <li key={p}><a href="#">{p}</a></li>
+            {[
+              "Shipping Policy",
+              "Returns",
+              "Privacy Policy",
+              "Terms of Use",
+            ].map((p) => (
+              <li key={p}>
+                <a href="/">{p}</a>
+              </li>
             ))}
           </ul>
         </div>
       </div>
+
       <div className="ab-footer-bottom">
-        <p className="ab-footer-copy">© 2025 <span>Arvind Bags</span>. All rights reserved. Thoothukudi, Tamil Nadu.</p>
-        <p className="ab-footer-copy">Made with ♥ in India</p>
+        <p className="ab-footer-copy">
+          © 2025 <span>Arvind Bags</span>. All rights reserved.
+          Thoothukudi, Tamil Nadu.
+        </p>
+
+        <p className="ab-footer-copy">
+          Made with ♥ in India
+        </p>
       </div>
     </footer>
   );
